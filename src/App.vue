@@ -1,11 +1,16 @@
-<script setup>
+<template>
+  <div>{{ url }}</div>
+</template>
+
+<script>
+import { defineAsyncComponent } from "vue";
 import api from "./js/api";
-const Feed = new api('https://anchor.fm/s/484b1994/podcast/rss')
-Feed.get().then(e => {
-  console.log(e);
-});
+export default {
+  props: ['url'],
+  created() {
+    if (!this.url) this.url = 'https://www.spreaker.com/show/5166877/episodes/feed'
+    console.log(this.url);
+  }
+};
 </script>
 
-<template>
-  <div>init</div>
-</template>
