@@ -15,3 +15,10 @@ export default class PotCast extends ApiRssToJson {
     this.url = url;
   }
 }
+
+export let api = {
+  install(app, options) {
+    let { url } = options;
+    console.log(app, url);
+  }
+}
