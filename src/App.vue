@@ -1,15 +1,13 @@
 <template>
-  <div></div>
+  <div>Work in progress</div>
 </template>
 
 <script>
 export default {
-  data(){
-    return {
-      potcast:{}
-    }
+  data() {
+    return {}
   },
-  created(){
+  created() {
     console.warn("load");
   }
 };
