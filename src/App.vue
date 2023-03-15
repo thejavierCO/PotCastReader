@@ -1,6 +1,7 @@
 <template>
-  <div>Insert URL</div>
-  <Input @change="data"></Input>
+  <div v-if="!loadingURl">
+    <label for="inputData">Insert URL: <Input id="inputData" @submit="data"></Input></label>
+  </div>
   <div v-if="loadingURl">Data potcasts</div>
   <div v-if="loadingURl">Data episodes</div>
 </template>
@@ -14,12 +15,14 @@ export default {
   },
   data() {
     return {
-      loadingURl: false
+      loadingURl: false,
+      url: ""
     }
   },
   methods: {
-    data: (a) => {
-      console.log(a);
+    data({ target }) {
+      this.url = target.value;
+      this.loadingURl = true;
     }
   },
   created() {
