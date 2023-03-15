@@ -1,8 +1,8 @@
 <template>
   <div>Insert URL</div>
   <Input @change="data"></Input>
-  <div>Data potcasts</div>
-  <div>Data episodes</div>
+  <div v-if="loadingURl">Data potcasts</div>
+  <div v-if="loadingURl">Data episodes</div>
 </template>
 
 <script>
@@ -13,7 +13,9 @@ export default {
     Input
   },
   data() {
-    return {}
+    return {
+      loadingURl: false
+    }
   },
   methods: {
     data: (a) => {
@@ -23,8 +25,8 @@ export default {
   created() {
     console.warn("load");
   },
-  mounted(a) {
-    console.log(a, this);
+  mounted() {
+    console.warn("mounted");
   }
 };
 </script>
