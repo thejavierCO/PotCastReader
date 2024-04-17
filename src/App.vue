@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import {PotCast} from "./js/api";
+import PotCast from "./js/api";
 export default {
   data() {
     return {}
