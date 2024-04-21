@@ -1,5 +1,5 @@
 <template>
-  <div>Work in progress</div>
+  <van-nav-bar title="Title" />
 </template>
 
 <script>
