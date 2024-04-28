@@ -10,7 +10,12 @@
     <van-grid-item v-for="item in potCast.items" :key="item">
       <h4>{{ item.title }} - {{ item.author }}</h4>
       <h5>{{ item.description }}</h5>
-      <audio :src="item.enclosures[0].url" controls></audio>
+      <div v-if="item.enclosures[0].url">
+        <audio :src="item.enclosures[0].url" controls></audio>
+      </div>
+      <div v-else>
+        not audio
+      </div>
     </van-grid-item>
   </van-grid>
 </template>
@@ -28,7 +33,7 @@ export default {
   },
   mounted() {
     let test = new PotCast()
-    test.get("https://enpodcast.libsyn.com/rss").then(e=>{
+    test.get("https://anchor.fm/s/484b1994/podcast/rss").then(e=>{
       this.potCast = e
       console.log(this.potCast.items)
     })
