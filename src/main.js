@@ -1,14 +1,11 @@
 import { createApp } from 'vue'
 import { NavBar } from 'vant';
 import App from './App.vue';
-// import { api } from "./js/api"
+import { Grid, GridItem } from 'vant';
+import 'vant/lib/index.css';
 
-const app = createApp(App)
+const app = createApp(App,{Title:"personal app"})
 
-app.use(NavBar)
+app.use(NavBar).use(Grid).use(GridItem)
 
-app
-  // .use(api, {
-  //   url: "https://anchor.fm/s/484b1994/podcast/rss"
-  // })
-  .mount("#app")
+app.mount("#app")
