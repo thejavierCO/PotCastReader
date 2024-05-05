@@ -1,7 +1,7 @@
 <template>
   <van-config-provider theme="dark">
     <van-nav-bar :title="Title" />
-    <van-grid :column-num="1" :gutter="100">
+    <van-grid :column-num="1" :gutter="500">
       <van-grid-item>
         <h3>{{ potCast.title }}</h3>
         <img :src="potCast.image" width="300px"/>
